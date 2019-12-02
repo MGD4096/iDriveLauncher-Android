@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name" translatable="false">BMW iDrive</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="media_artist">No Artist</string>
+    <string name="media_title">No Title</string>
+    <string name="browser">Browser</string>
+    <string name="browser_description">Web browsing</string>
+    <string name="dvr">DVR</string>
+    <string name="dvr_description">Record driving and sound</string>
+    <string name="file">File Manager</string>
+    <string name="file_description">Resource managment</string>
+    <string name="video">Video</string>
+    <string name="video_description">Do not watch the video while driving</string>
+    <string name="phonelink">PhoneLink</string>
+    <string name="phonelink_description">Support USB or Wifi connection</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bluetooth_description">Turn on the Bluetooth device and make a calle </string>
+    <string name="bluetooth_description_connected">Connected to phone</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="dashboard_description">Check engine parameters</string>
+    <string name="voice">Voice assistent</string>
+    <string name="voice_description">Smart dialog Q and A</string>
+    <string name="navigation">Navigation</string>
+    <string name="navigation_description">Navigate for you in real time</string>
+    <string name="settings">Settings</string>
+    <string name="settings_description">System function settings</string>
+    <string name="app">App</string>
+    <string name="app_description">Open more apps</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="app_header">App</string>
+    <string name="audio_header">Audio</string>
+
+    <!-- Messages Preferences -->
+    <string name="map_enabled">Map on Main screen</string>
+    <string name="autobrightness_desc">Adjusts the brightness to an hour</string>
+
+    <!-- Sync Preferences -->
+    <string name="AdaptiveLoudnes_title">Adjusts the volume to speed</string>
+    <string name="AL_avalue_title">Value of adaptation:</string>
+    <string name="AL_asteps_title">The adaptation step:</string>
+    <string name="AL_svalue_title">Initial value:</string>
+    <string name="PlayOnBoot_title">Automatic play music on boot</string>
+
+    <!-- Strings related to Settings -->
+
+
+</resources>

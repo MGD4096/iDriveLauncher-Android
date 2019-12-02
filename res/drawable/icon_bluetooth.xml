@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item>
+        <shape android:shape="rectangle" >
+            <gradient
+                android:angle="360"
+                android:centerColor="#a5a6a8"
+                android:endColor="#35393c"
+                android:gradientRadius="70%p"
+                android:startColor="#35393c"
+                android:type="radial" />
+            <stroke
+                android:width="1dp"
+                android:color="#35393c" />
+
+        </shape>
+    </item>
+    <item
+        android:height="130dp"
+        android:width="130dp"
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp">
+        <bitmap android:src="@drawable/icon_backgroung">
+
+        </bitmap>
+
+    </item>
+
+    <item
+    android:bottom="2dp"
+    android:left="2dp"
+    android:right="2dp"
+    android:top="2dp">
+    <shape android:shape="rectangle" >
+        <gradient
+            android:angle="360"
+            android:endColor="#0035393c"
+            android:centerX="0.4"
+            android:centerY="0.4"
+            android:gradientRadius="50%p"
+            android:startColor="#7bffffff"
+            android:type="radial" />
+
+
+    </shape>
+</item>
+    <item
+        android:bottom="23dp"
+        android:left="38dp"
+        android:right="38dp"
+        android:top="23dp">
+        <shape android:shape="oval" >
+            <solid android:color="#c16b6b6b"></solid>
+
+
+        </shape>
+    </item>
+    <item
+        android:bottom="19dp"
+        android:left="19dp"
+        android:right="19dp"
+        android:top="19dp">
+        <bitmap android:src="@drawable/i_bluetooth"
+            android:tint="#fff"
+            />
+
+    </item>
+
+    <item
+        android:bottom="20dp"
+        android:left="20dp"
+        android:right="20dp"
+        android:top="20dp">
+        <bitmap android:src="@drawable/i_bluetooth"
+            android:tint="#000"
+            />
+
+    </item>
+
+</layer-list>

@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:droidux="http://schemas.android.com/apk/res-auto"
+    tools:context="net.mateusz_grzymala.bmwidrive.Launcher.MainActivity"
+    android:background="@drawable/gradient_background">
+
+    <ImageButton
+        android:id="@+id/arrow_right_scroll"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/arrow_left_scroll"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:adjustViewBounds="true"
+        android:background="?android:attr/windowBackground"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:onClick="rightScroll"
+        android:scaleType="centerInside"
+        android:src="@drawable/arrow_right" />
+
+    <ImageButton
+        android:id="@+id/arrow_left_scroll"
+        android:layout_width="95dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="250dp"
+        android:adjustViewBounds="true"
+        android:background="?android:attr/windowBackground"
+        android:clickable="true"
+        android:elevation="5dp"
+        android:onClick="leftScroll"
+        android:scaleType="centerInside"
+        android:src="@drawable/arrow_left" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="95dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-4dp"
+        android:adjustViewBounds="true"
+        android:background="?android:attr/windowBackground"
+        android:clickable="true"
+        android:onClick="ScrollToBegin"
+        android:scaleType="centerInside"
+        android:src="@drawable/home1" />
+
+    <HorizontalScrollView
+        android:id="@+id/hsmain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true">
+
+        <net.mateusz_grzymala.bmwidrive.Launcher.ReflectingLayout
+            android:id="@+id/rll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/hsvl"
+                android:layout_width="match_parent"
+                android:layout_height="430dp"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:id="@+id/Media"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="87dp"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@android:color/holo_orange_dark"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:keepScreenOn="false"
+                    android:onClick="onButtonShowPopupWindowClick"
+                    android:orientation="vertical"
+                    android:weightSum="1">
+
+                    <TableRow
+                        android:id="@+id/media_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_above="@+id/hsmain"
+                        android:layout_alignEnd="@+id/imageButton"
+                        android:layout_alignRight="@+id/imageButton"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="5dp"
+                            android:adjustViewBounds="true"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/music24" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="124dp"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="Media/Radio"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textIsSelectable="false"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/widgetAudio"
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="0dp">
+
+                        <Button
+                            android:id="@+id/AddAudioWidget"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="selectWidget"
+                            android:text="Dodaj Widget" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Navigation"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical"
+                    android:onClick="onButtonShowPopupWindowClick1"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:id="@+id/navi_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5px"
+                            android:layout_marginRight="5px"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/navi" />
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5px"
+                            android:text="@string/navigation"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/MapViews"
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="0dp">
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="20dp"
+                            android:paddingRight="20dp"
+                            android:text="@string/navigation_description"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/navicontur" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Dashboard"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="75dp"
+                    android:layout_weight="11.43"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:onClick="goObd"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/seg_ci_thumb"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/i_dashboard_t" />
+
+                        <TextView
+                            android:id="@+id/seg_ci_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="@string/dashboard"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:orientation="vertical"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:id="@+id/widgetOBC"
+                            android:layout_width="@dimen/section_width"
+                            android:layout_height="@dimen/section_small_height"
+                            android:background="@drawable/gradient_background_section"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="0dp">
+
+                            <Button
+                                android:id="@+id/AddOBCWidget"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="selectObcWidget"
+                                android:text="Dodaj Widget" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Bluetooth"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginRight="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:onClick="goBluetooth1"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/phone" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="@string/bluetooth"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:weightSum="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/bttxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="@string/bluetooth_description"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#fff"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </TableRow>
+
+                        <ImageView
+                            android:id="@+id/btimg"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:padding="10px"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/icon_bluetooth" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Apps"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="11.43"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:onClick="goApps"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/seg_ap_thumb"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/i_apps" />
+
+                        <TextView
+                            android:id="@+id/seg_ap_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="@string/app"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:weightSum="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginBottom="18sp"
+                                android:text="@string/app_description"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#fff"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </TableRow>
+
+                        <ImageView
+                            android:id="@+id/seg_ap_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:padding="10px"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/icon_apps" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/DVR"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="75dp"
+                    android:layout_weight="11.43"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:onClick="goDVR"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/seg_dr_thumb"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/i_dvr" />
+
+                        <TextView
+                            android:id="@+id/seg_dr_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="@string/dvr"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:weightSum="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginBottom="18sp"
+                                android:text="@string/dvr_description"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#fff"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </TableRow>
+
+                        <ImageView
+                            android:id="@+id/seg_dr_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:padding="10px"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/icon_dvr" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Video"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="11.43"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:onClick="goVideo"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/i_video" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="@string/video"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:weightSum="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:text="@string/video_description"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#fff"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </TableRow>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="4dp"
+                            android:adjustViewBounds="true"
+                            android:padding="10px"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/icon_video" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/PhoneLink"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="11.43"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:onClick="goPhoneLink"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/seg_pl_thumb"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/i_phonelink" />
+
+                        <TextView
+                            android:id="@+id/seg_pl_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="@string/phonelink"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:weightSum="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginBottom="4dp"
+                                android:text="@string/phonelink_description"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#fff"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </TableRow>
+
+                        <ImageView
+                            android:id="@+id/seg_pl_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="0dp"
+                            android:adjustViewBounds="true"
+                            android:padding="10px"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/icon_phonelink" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Settings"
+                    android:layout_width="@dimen/section_width"
+                    android:layout_height="@dimen/section_height"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="95dp"
+                    android:layout_weight="11.43"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:onClick="goSettings"
+                    android:orientation="vertical">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/section_title"
+                        android:layout_marginBottom="5px"
+                        android:background="@drawable/head_section_hover"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:weightSum="1">
+
+                        <ImageView
+                            android:id="@+id/seg_set_thumb"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:paddingTop="1dp"
+                            android:paddingRight="5dp"
+                            android:paddingBottom="1dp"
+                            android:src="@drawable/i_settings" />
+
+                        <TextView
+                            android:id="@+id/seg_set_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="left|center_vertical"
+                            android:paddingLeft="5dp"
+                            android:text="@string/settings"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="#fff"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <LinearLayout
+                        android:layout_width="@dimen/section_width"
+                        android:layout_height="@dimen/section_small_height"
+                        android:background="@drawable/gradient_background_section"
+                        android:orientation="vertical"
+                        android:padding="15dp"
+                        android:weightSum="1">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginBottom="18sp"
+                                android:text="@string/settings_description"
+                                android:textAppearance="?android:attr/textAppearanceLarge"
+                                android:textColor="#fff"
+                                android:textSize="18sp"
+                                android:textStyle="normal" />
+                        </TableRow>
+
+                        <ImageView
+                            android:id="@+id/seg_set_img"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:padding="10px"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/icon_setings" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </net.mateusz_grzymala.bmwidrive.Launcher.ReflectingLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="400dp"
+        android:background="@drawable/bg2"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@color/common_google_signin_btn_text_light_disabled"
+            android:onClick="goBrowser"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/i_browser" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@color/common_google_signin_btn_text_light_disabled"
+            android:onClick="goAssistent"
+            android:paddingTop="10dp"
+            android:paddingRight="30dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/i_microphone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/hsmain"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/clock"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/setbtn"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:onClick="gotoAppSettings"
+            android:padding="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/it_settings" />
+
+        <ImageView
+            android:id="@+id/btbtn2"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:onClick="goBluetooth1"
+            android:padding="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/bluetooth1" />
+
+        <ImageView
+            android:id="@+id/wifibtn"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/wifi1" />
+
+        <DigitalClock
+            android:id="@+id/digitalClock"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contextClickable="false"
+            android:gravity="right|center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="20dp"
+            android:textColor="#ffffff"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+</RelativeLayout>

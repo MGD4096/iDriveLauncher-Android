@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BMW iDrive</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="media_artist">Brak Artysty</string>
+    <string name="media_title">Brak Tytułu</string>
+    <string name="browser">Przeglądarka</string>
+    <string name="browser_description">Przeglądarka internetowa</string>
+    <string name="dvr">DVR</string>
+    <string name="dvr_description">Rejestrator jazdy</string>
+    <string name="file">Pliki</string>
+    <string name="file_description">Zarządzanie plikami</string>
+    <string name="video">Wideo</string>
+    <string name="video_description">Nie oglądaj wideo podczas jazdy</string>
+    <string name="phonelink">PhoneLink</string>
+    <string name="phonelink_description">Obsługuje połączenie USB lub Wi-Fi</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="bluetooth_description">Włącz urządzenie Bluetooth</string>
+    <string name="bluetooth_description_connected">Połączono z telefonem</string>
+    <string name="dashboard">Konsola Wskaźników</string>
+    <string name="dashboard_description">Sprawdź parametry silnika</string>
+    <string name="voice">Asystent głosowy</string>
+    <string name="voice_description">Inteligentne okno dialogowe</string>
+    <string name="navigation">Nawigacja</string>
+    <string name="navigation_description">Nawigacja w czasie rzeczywistym</string>
+    <string name="settings">Ustawienia</string>
+    <string name="settings_description">Ustawienia systemu</string>
+    <string name="app">Aplikacje</string>
+    <string name="app_description">Więcej aplikacji</string>
+    <!-- Ustawienia -->
+    <string name="title_activity_settings">Ustawienia</string>
+    <string name="app_header">Aplikacja</string>
+    <string name="audio_header">Audio</string>
+
+    <!-- Messages Preferences -->
+    <string name="map_enabled">Mapa na ekranie głównym</string>
+    <string name="autobrightness_desc">Dostosowuje jasność do godziny</string>
+    <!-- Sync Preferences -->
+    <string name="AdaptiveLoudnes_title">Dostosuj głośność do prędkości</string>
+    <string name="AL_avalue_title">Wartość adaptacji:</string>
+    <string name="AL_asteps_title">Krok adaptacji:</string>
+    <string name="AL_svalue_title">Początkowa wartość:</string>
+    <string name="PlayOnBoot_title">Automatyczne odtwarzanie po starcie systemu</string>
+
+</resources>

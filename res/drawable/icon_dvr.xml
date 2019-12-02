@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+
+
+    <item
+    android:bottom="2dp"
+    android:left="2dp"
+    android:right="2dp"
+    android:top="2dp">
+    <shape android:shape="rectangle" >
+        <gradient
+            android:angle="360"
+            android:endColor="#0035393c"
+            android:centerX="0.5"
+            android:centerY="0.5"
+            android:gradientRadius="40%p"
+            android:startColor="#7bffffff"
+            android:type="radial" />
+
+
+    </shape>
+</item>
+
+    <item
+        android:width="130dp"
+        android:height="130dp"
+
+
+        >
+        <bitmap android:src="@drawable/i_dvr_l"
+
+            />
+
+    </item>
+
+</layer-list>

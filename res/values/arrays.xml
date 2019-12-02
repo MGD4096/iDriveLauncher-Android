@@ -1,0 +1,34 @@
+<resources>
+    <!-- Reply Preference -->
+    <string-array name="al_entries">
+        <item>10 km/h</item>
+        <item>20 km/h</item>
+        <item>30 km/h</item>
+        <item>40 km/h</item>
+        <item>50 km/h</item>
+    </string-array>
+
+    <string-array name="al_values">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+
+    <string-array name="alv_entries">
+        <item>+1 volume</item>
+        <item>+2 volume</item>
+        <item>+3 volume</item>
+        <item>+4 volume</item>
+        <item>+5 volume</item>
+    </string-array>
+
+    <string-array name="alv_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
